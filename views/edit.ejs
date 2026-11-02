@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 수정</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <h1>메뉴 수정</h1>
+
+        <form action="/edit/<%= menu.id %>" method="POST">
+            <label>메뉴 이름</label>
+            <input type="text" name="name"
+                   value="<%= menu.name %>" required>
+
+            <label>가격</label>
+            <input type="number" name="price"
+                   value="<%= menu.price %>" min="0" required>
+
+            <label>설명</label>
+            <input type="text" name="description"
+                   value="<%= menu.description || '' %>">
+
+            <button type="submit">수정하기</button>
+        </form>
+
+        <a href="/">돌아가기</a>
+    </main>
+</body>
+</html>
